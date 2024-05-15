@@ -5,7 +5,7 @@
 
 ```
 
-  git clone https://github.com/Rahemanali-24/ShopCart-Ecommerce-Backend.git
+git clone https://github.com/Rahemanali-24/ShopCart-Ecommerce-Backend.git
 
 
 ```
@@ -29,8 +29,17 @@ npm install
 
 ```
 
+4. Create a new `.env` file in the root directory in the project
+   and then add the following environment variables to the `.env` file
 
-4. Turn up the server 
+```
+PORT=value_of_socket_port
+
+```
+
+
+
+5. Turn up the server 
 
 ```
 

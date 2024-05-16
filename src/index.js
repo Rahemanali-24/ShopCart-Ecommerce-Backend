@@ -1,17 +1,11 @@
 const express = require('express');
-
 const {PORT} = require('./config/serverConfig')
-
+const ApiRouter = require('./routes/apiRouter');
 const app = express();
 
 
+app.use('/api',ApiRouter) //if any request come with /api we are going to map api routes
 
-
-
-
-
-
-const PORT = 3000;
 app.listen(PORT,function(){
     console.log(`server is running in port ${PORT}`);
 });

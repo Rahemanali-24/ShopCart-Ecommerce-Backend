@@ -1,4 +1,5 @@
 function pingController(request,response){
+    console.log("pingController hit")
     return response.json({message:"v1 for ping"});
 }
 

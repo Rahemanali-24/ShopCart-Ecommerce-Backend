@@ -1,6 +1,6 @@
 const express = require('express');
 const v2Router = express.Router();
-const pingRouterV2 = require('./pingRoutesV2');
+const pingRouterV2 = require('./ping_Router_v2');
 
 
 //Any new api if we have introduce we just register here 

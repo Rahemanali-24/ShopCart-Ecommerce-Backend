@@ -30,3 +30,26 @@
     your order of middleware which you are calling need to be complete in the order
     because middleware is also function
     
+
+
+    class BadRequest extends Error{
+
+    constructor(propertyMissing){
+        const errorMessage = `${propertyMissing} is missing from the request body`;
+        super(errorMessage);
+        this.statusCode = 400;
+        this.errorMessage = errorMessage;
+    }
+    }
+
+    module.exports = {
+    BadRequest
+    }
+
+
+    for Error why we are extending before the first is for all error
+    we can'do new Error() its will effect the code clean
+    and second is for err.stack we get exact stack where error is coming
+    if we don't do extends to ERROR so we get properly error
+
+    

@@ -34,5 +34,7 @@ function authChecker(request,response,next){
 }
 
 
-router.get('/',[checkRequest,logger,authChecker],pingController);
+// router.get('/',[checkRequest,logger,authChecker],pingController);
+
+router.get('/',pingController);
 module.exports = router;

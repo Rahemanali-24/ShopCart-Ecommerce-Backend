@@ -1,7 +1,7 @@
-function errorResponse(message,error){
+function errorResponse(reasonPhrase,error,){
     return {
             success:false,
-            message:message,
+            message:reasonPhrase,
             data:{},
             error:error,
     }

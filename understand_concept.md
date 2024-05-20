@@ -30,7 +30,7 @@
     your order of middleware which you are calling need to be complete in the order
     because middleware is also function
     
-
+`ERROR`
 
     class BadRequest extends Error{
 
@@ -48,8 +48,33 @@
 
 
     for Error why we are extending before the first is for all error
-    we can'do new Error() its will effect the code clean
+    we can'do new Error() its will effect the  clean code
     and second is for err.stack we get exact stack where error is coming
-    if we don't do extends to ERROR so we get properly error
+    if we don't do extends to ERROR so we don't get properly error in stack.
 
+    
+
+    controller never do any logic it s pass to services and in services 
+    we do business logic
+    and product services never interact with database
+    database interaction should always happened with Repository
+
+
+
+    when you do 
+     name:{
+        type:Sequelize.STRING,
+        allowNull:false,
+        unique:true
+    },
+    description:{
+        type:Sequelize.STRING,
+        allowNull:false,
+    }
+
+    like this unique for name and when you hit api in postman with
+    same name twice it still work and create data but our code 
+    which is checking for unique why that not working?
+
+    because when you use db.sync() it will add data it will not check unique ness
     

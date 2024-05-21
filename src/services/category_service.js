@@ -33,6 +33,16 @@ class CategoryService {
         const response = await this.repository.destroyCategory(categoryId);
         return response;
     }
+
+    async destroyAllCategory(){
+        const response = await this.repository.destroyAllCategory();
+        return response;
+    }
+
+    async updateCategory(categoryId,details){
+        const response = await this.repository.updateCategory(categoryId,details);
+        return response;
+    }
 }
 
 module.exports = CategoryService;

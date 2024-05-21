@@ -76,10 +76,44 @@ async function destroyCategory(req,res){
     }
 }
 
+async function destroyAllCategory(req,res){
+    try{
+        const response =  await categoryService.destroyAllCategory();
+        return res.status(StatusCodes.OK).json({
+            success:true,
+            error:{},
+            message:"successfully deleted All Category",
+            data:response
+        })
+    }catch(err){
+        console.log("getting error for getting All Category");
+        res.status(400).json({message:"getAllCategory api not working"});
+    }
+}
+
+async function updateCategory(req,res){
+    try{
+        const id = req.params.id;
+        const details = req.body;
+        const response =  await categoryService.updateCategory(id,details);
+        return res.status(StatusCodes.OK).json({
+            success:true,
+            error:{},
+            message:"successfully updated Category",
+            data:response
+        })
+    }catch(err){
+        console.log("updating error for update  Category");
+        res.status(400).json({message:"updateCategory api not working"});
+    }
+}
+
+
 module.exports = {
     createCategory,
     getAllCategories,
     getCategory,
-    destroyCategory
-
+    destroyCategory,
+    destroyAllCategory,
+    updateCategory
 }

@@ -1,7 +1,6 @@
 const Category = require('../models/category');
 
 class CategoryRepository {
-
     async getCategories() {
         try {
             const response = await Category.findAll();
@@ -12,7 +11,6 @@ class CategoryRepository {
             throw err;  // Throwing the error to be handled by the caller
         }
     }
-
     async getCategory(id) {
         try {
             const response = await Category.findByPk(id);
@@ -22,7 +20,6 @@ class CategoryRepository {
             throw err;  // Throwing the error to be handled by the caller
         }
     }
-
     async createCategory(name, description) {
         try {
             const response = await Category.create({
@@ -33,6 +30,21 @@ class CategoryRepository {
         } catch (err) {
             console.error("CategoryRepository createCategory: ", err);
             throw err;  // Throwing the error to be handled by the caller
+        }
+    }
+
+
+    async destroyCategory(categoryId){
+        try{
+            const response = await Category.destroy({
+               where:{
+                id:categoryId
+               }
+            });
+            return response;
+        }catch(err){
+            console.log(err);
+            
         }
     }
 }

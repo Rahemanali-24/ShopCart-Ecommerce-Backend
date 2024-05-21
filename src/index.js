@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api',ApiRouter) //if any request come with /api we are going to map api routes
+
+
 app.listen(PORT,async function(){ 
     console.log(`server is running in port ${PORT}`);
     await db.sync();
